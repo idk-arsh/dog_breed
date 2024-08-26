@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog Breed Classifier Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 500px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 400px;
+            margin-top: 20px;
+        }
+        #image-preview {
+            max-width: 100%;
+            max-height: 400px;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Dog Breed Classifier</h1>
+    </div>
+    <div class="container">
+        <h1>Dog Breed Classifier Results</h1>
+        <p>Predicted dog breed: {{ prediction[0] }}</p>
+        <img id="image-preview" src="data:image/{{ image_ext }};base64,{{ image_data }}" alt="Uploaded Image">
+        <p><a href="https://en.wikipedia.org/wiki/{{ prediction[0].replace(' ', '_') }}" target="_blank">Learn more about {{ prediction[0] }} on Wikipedia</a></p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Dog Breed Classifier | All Rights Reserved</p>
+    </div>
+</body>
+</html>
